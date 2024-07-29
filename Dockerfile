@@ -52,6 +52,7 @@ RUN \
   --with-http_ssl_module \
   --with-debug \
   --with-http_stub_status_module \
+  --with-stream --with-http_realip_module --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-http_v2_module \
   --with-cc-opt="-Wimplicit-fallthrough=0" && \
   make && \
   make install
@@ -141,6 +142,9 @@ ENV RTMP_PORT 1935
 
 RUN apk add --no-cache \
   ca-certificates \
+  libxcb \
+  libwebpmux \
+  lame-libs \
   gettext \
   openssl \
   pcre \
